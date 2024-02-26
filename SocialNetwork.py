@@ -156,9 +156,12 @@ class SocialNetwork:
             self.__image = image
 
         def display(self):
-            img = mpimg.imread(self.__image)
-            plt.imshow(img)
-            plt.show()
+            try:
+                img = mpimg.imread(self.__image)
+                plt.imshow(img)
+                plt.show()
+            except FileNotFoundError:
+                pass
             print("Shows picture")
 
         def __str__(self):
